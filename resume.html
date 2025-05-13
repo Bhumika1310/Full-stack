@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Resume Generator</h1>
+
+        <form id="resumeForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="contact">Contact Info:</label>
+            <input type="text" id="contact" required>
+
+            <label for="education">Education:</label>
+            <textarea id="education" required></textarea>
+
+            <label for="experience">Work Experience:</label>
+            <textarea id="experience" required></textarea>
+
+            <label for="skills">Skills:</label>
+            <textarea id="skills" required></textarea>
+
+            <button type="button" onclick="generateResume()">Generate Resume</button>
+        </form>
+
+        <div id="resumeOutput" class="resume">
+            <h2 id="outputName"></h2>
+            <p id="outputContact"></p>
+            <h3>Education</h3>
+            <p id="outputEducation"></p>
+            <h3>Work Experience</h3>
+            <p id="outputExperience"></p>
+            <h3>Skills</h3>
+            <p id="outputSkills"></p>
+        </div>
+    </div>
+
+    <script>
+        function generateResume() {
+            document.getElementById("outputName").innerText = document.getElementById("name").value;
+            document.getElementById("outputContact").innerText = document.getElementById("contact").value;
+            document.getElementById("outputEducation").innerText = document.getElementById("education").value;
+            document.getElementById("outputExperience").innerText = document.getElementById("experience").value;
+            document.getElementById("outputSkills").innerText = document.getElementById("skills").value;
+
+            document.getElementById("resumeOutput").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
